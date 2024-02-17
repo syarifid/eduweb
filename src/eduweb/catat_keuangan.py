@@ -3,9 +3,11 @@ cash_out_transactions = []
 
 def cash_in(amount):
     cash_in_transactions.append(amount)
+    print(f"Cash in recorded: {amount}\n")
 
 def cash_out(amount):
     cash_out_transactions.append(amount)
+    print(f"Cash out recorded: {amount}\n")
 
 def calculate_cash_in_total():
     return sum(cash_in_transactions)
@@ -30,22 +32,16 @@ while True:
     if choice == '1':
         amount = float(input("Enter the amount for cash in: "))
         cash_in(amount)
-        print("Cash in recorded.")
 
     elif choice == '2':
         amount = float(input("Enter the amount for cash out: "))
         cash_out(amount)
-        print("Cash out recorded.")
 
     elif choice == '3':
-        print("List of Cash In Transactions:")
-        for transaction in cash_in_transactions:
-            print(transaction)
+        print("List of cash in transactions:", cash_in_transactions)
 
     elif choice == '4':
-        print("List of Cash Out Transactions:")
-        for transaction in cash_out_transactions:
-            print(transaction)
+        print("List of cash out transactions:", cash_out_transactions)
 
     elif choice == '5':
         total_cash_in = calculate_cash_in_total()
