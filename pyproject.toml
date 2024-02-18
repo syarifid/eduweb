@@ -5,7 +5,13 @@ description = "Education Web Dev"
 authors = [
     {name = "Muhammad Syarifudin", email = "muhammad.el.syarifudin@gmail.com"},
 ]
-dependencies = []
+dependencies = [
+    "django>=5.0.2",
+    "flask>=3.0.2",
+    "fastapi>=0.109.2",
+    "socketify>=0.0.27",
+    "uvicorn>=0.27.1",
+]
 requires-python = ">=3.11"
 readme = "README.md"
 license = {text = "MIT"}
@@ -13,3 +19,8 @@ license = {text = "MIT"}
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
+
+[tool.pdm.scripts]
+start = "pdm run src/eduweb/main.py"
+build = "docker build -t hello-world ."
+help = "pdm run src/eduweb/help.py"
